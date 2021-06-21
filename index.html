@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Font Size Varying</title>
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <span class="btn active" onclick="document.getElementById('text').style.fontSize = '1em'">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize = '1.5em'">A</span>
+            <span class="btn" onclick="document.getElementById('text').style.fontSize = '2em'">A</span>
+        </div>
+        <div class="content" id="text">
+            <h2>Font Size Varying</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quae laudantium suscipit non eveniet quis repudiandae accusantium aut ipsum rerum obcaecati ad autem ipsa itaque dolor expedita voluptatem, veniam, quaerat blanditiis ipsam veritatis adipisci? Culpa labore iste dolor, eius, impedit deserunt minima similique expedita rerum quidem provident, quas sapiente ipsam nisi natus aliquid? Dicta similique minus ea culpa sit nulla dolorum eum, itaque consectetur numquam, quod eaque est quibusdam non.</p>
+        </div>
+    </div>
+    <script>
+        let buttons = document.querySelector('.buttons');
+        let btn = buttons.querySelectorAll('.btn');
+        for(var i=0; i<btn.length; i++){
+            btn[i].addEventListener('click',function(){
+                let current= document.getElementsByClassName('active');
+                current[0].className = current[0].className.replace('active','');
+                this.className += " active";
+            })
+        }
+    </script>
+
+</body>
+</html>
